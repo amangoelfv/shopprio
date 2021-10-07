@@ -6,7 +6,9 @@ import HomePage from './pages/homepage/homepage.components';
 function App() {
   return (
     <div>
-      <Route exact path='/' component={HomePage} />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+      </Switch>
     </div>
   );
 }
