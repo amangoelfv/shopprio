@@ -43,8 +43,8 @@ const SignIn = () => {
                     handleChange={(e) => setPassword(e.target.value)}
                 />
                 <div className='buttons'>
-                    <CustomButton type='submit'>SIGN IN</CustomButton>
-                    <CustomButton isGoogleSignIn onClick={signInWithGoogle}>SIGN IN WITH GOOGLE</CustomButton>
+                    <CustomButton  type='submit'>SIGN IN</CustomButton>
+                    <CustomButton type="button" isGoogleSignIn onClick={signInWithGoogle}>SIGN IN WITH GOOGLE</CustomButton>
                 </div>
             </form>
         </div>

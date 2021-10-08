@@ -14,7 +14,7 @@ function App() {
     const authSubscription = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-        const unsub = onSnapshot(userRef, (ss) => {
+        onSnapshot(userRef, (ss) => {
           setCurrentUser({
             id: ss.id,
             ...ss.data()
