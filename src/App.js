@@ -9,6 +9,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { onSnapshot } from "firebase/firestore";
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
+import CheckoutPage from './pages/checkout/checkout.component';
 
 function App({ setCurrentUser, currentUser }) {
   useEffect(() => {
@@ -35,6 +36,7 @@ function App({ setCurrentUser, currentUser }) {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
+        <Route exact path='/checkout' component={CheckoutPage} />
         <Route exact path='/signin' render={() => currentUser ? (<Redirect to='/' />) : <SignInPage />} />
       </Switch>
     </div>
