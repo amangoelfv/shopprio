@@ -2,6 +2,7 @@ import React from 'react';
 import './checkout.styles.scss'
 import { connect } from 'react-redux';
 import CheckoutItem from './../../components/checkout-item/checkout-item.component';
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 const CheckoutPage = ({ cartItems, total }) => (
     <div className="checkout-page">
@@ -9,9 +10,10 @@ const CheckoutPage = ({ cartItems, total }) => (
             <div className='header-block'>
                 <span>Product</span>
             </div>
-            <div className='header-block'>
+            <div className="header-block">
                 <span>Description</span>
             </div>
+
             <div className='header-block'>
                 <span>Quantity</span>
             </div>
@@ -28,6 +30,7 @@ const CheckoutPage = ({ cartItems, total }) => (
         <div className='total'>
             <span>TOTAL: ₹{total}</span>
         </div>
+        <StripeCheckoutButton />
     </div>
 )
 const mapStateToProps = ({ cart: { cartItems } }) => ({
